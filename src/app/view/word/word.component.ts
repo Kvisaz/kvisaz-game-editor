@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {WordService} from '../../logic/word.service';
 import {StringService} from '../../logic/string.service';
+import {IWord} from '../../abstract/AbstractInterfaces';
 
 @Component({
   selector: 'app-word',
@@ -13,6 +14,7 @@ export class WordComponent implements OnInit {
   @Input() id: number;
 
   private blocked = false;
+  isChanged = false;
 
   constructor(
     private wordService: WordService,
@@ -30,5 +32,14 @@ export class WordComponent implements OnInit {
     this.blocked = true;
     console.log(`remove ${this.id}`);
     this.wordService.remove(this.id);
+  }
+
+  onInputChange() {
+    console.log('onInputChange', this.one, this.two);
+    this.isChanged = true;
+  }
+
+  saveItem() {
+    this.wordService.saveItem(this.one, this.two, this.id);
   }
 }

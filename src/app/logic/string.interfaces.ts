@@ -1,5 +1,6 @@
 export interface IStringSource extends IStringSourceContract {
   close: string;
+  itemSave: string;
   itemBtRemove: string;
   inputWordOne: string;
   inputWordTwo: string;
