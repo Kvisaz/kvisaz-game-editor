@@ -7,5 +7,5 @@
     <mat-label>{{strings.get().inputWordTwo}}</mat-label>
     <input matInput [(ngModel)]="wordTwo">
   </mat-form-field>
-  <button mat-button (click)="onClick()">{{strings.get().inputBtAdd}}</button>
+  <button mat-button mat-raised-button color="primary" (click)="onClick()">{{strings.get().inputBtAdd}}</button>
 </div>
