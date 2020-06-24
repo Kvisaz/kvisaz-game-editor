@@ -1,2 +1,4 @@
 <div>{{one}} : {{two}}</div>
-<button mat-mini-fab mat-raised-button color="warn" (click)="remove()" aria-label="{{strings.get().itemBtRemove}}"> <mat-icon>delete</mat-icon></button>
+<button mat-mini-fab mat-raised-button color="warn" (click)="remove()" matTooltip="{{strings.get().itemBtRemove}}">
+  <mat-icon>delete</mat-icon>
+</button>
