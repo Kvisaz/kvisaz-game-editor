@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {WordService} from '../logic/word.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'kvisaz-game-editor';
+
+  constructor(private wordService: WordService) {
+  }
+
+  isReady() {
+    return this.wordService.isReady();
+  }
 }

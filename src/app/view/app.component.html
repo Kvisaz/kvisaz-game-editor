@@ -1,7 +1,11 @@
 <div class="mat-app-background basic-container">
 
   <mat-card class="example-card"><p>{{ title }} app is running!</p></mat-card>
-
-  <app-wordlist></app-wordlist>
-  <app-word-input></app-word-input>
+  <div [ngSwitch]="isReady()">
+    <div *ngSwitchCase="false">isLoading...</div>
+    <div *ngSwitchCase="true">
+      <app-wordlist></app-wordlist>
+      <app-word-input></app-word-input>
+    </div>
+  </div>
 </div>

@@ -16,7 +16,7 @@ export class WordService {
       this.repository.load()
         .then(words => this.onLoad(words))
         .catch(e => this.onLoadError(e));
-    }, 1500);
+    }, 550);
   }
 
   isReady(): boolean {
@@ -77,11 +77,13 @@ export class WordService {
 
   private onLoad(words: Array<IWord>) {
     this.words = words || [];
+    this.isWordsReady = true;
     console.log(`onLoad: ${words}`);
   }
 
   private onLoadError(e: any) {
     this.words = [];
+    this.isWordsReady = true;
     console.log(`onLoadError: ${e}`);
   }
 
