@@ -1,4 +1,12 @@
-<div>{{one}} : {{two}}</div>
+<div class="fields">
+  <mat-form-field>
+    <input matInput [(ngModel)]="one">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="two">
+  </mat-form-field>
+</div>
 <button mat-mini-fab mat-raised-button color="warn" (click)="remove()" matTooltip="{{strings.get().itemBtRemove}}">
   <mat-icon>delete</mat-icon>
 </button>

@@ -1,0 +1,7 @@
+.mat-form-field {
+  margin-right: 32px;
+}
+
+.mat-form-field:last-of-type {
+  margin-right: 0;
+}
