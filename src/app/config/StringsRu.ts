@@ -3,6 +3,7 @@ import {IStringSource} from '../logic/string.interfaces';
 export const StringsRu: IStringSource = {
   close: 'Закрыть',
   itemSave: 'Сохранить',
+  itemBtSwap: 'Поменять',
   inputWordOne: 'Слово 1',
   inputWordTwo: 'Слово 2',
   inputBtAdd: 'Добавить',

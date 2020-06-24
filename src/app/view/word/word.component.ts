@@ -35,11 +35,18 @@ export class WordComponent implements OnInit {
   }
 
   onInputChange() {
-    console.log('onInputChange', this.one, this.two);
     this.isChanged = true;
   }
 
   saveItem() {
     this.wordService.saveItem(this.one, this.two, this.id);
+    // this.isChanged = true; // не нужно, так как список обновится
+  }
+
+  swap() {
+    const oneTmp = this.one;
+    this.one = this.two;
+    this.two = oneTmp;
+    this.saveItem();
   }
 }

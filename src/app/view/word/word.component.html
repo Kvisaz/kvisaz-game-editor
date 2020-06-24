@@ -3,6 +3,10 @@
     <input (input)="onInputChange()" matInput [(ngModel)]="one">
   </mat-form-field>
 
+  <button mat-mini-fab mat-raised-button color="primary" (click)="swap()" matTooltip="{{strings.get().itemBtSwap}}">
+    <mat-icon>sync</mat-icon>
+  </button>
+
   <mat-form-field>
     <input (input)="onInputChange()" matInput [(ngModel)]="two">
   </mat-form-field>

@@ -2,5 +2,14 @@
   margin-right: 32px;
 }
 
+.fields button {
+  margin-right: 32px;
+}
+
 .mat-form-field:last-of-type {
+}
+
+.fields {
+  display: flex;
+  align-items: center;
 }
