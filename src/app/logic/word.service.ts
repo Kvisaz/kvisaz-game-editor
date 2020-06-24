@@ -66,7 +66,7 @@ export class WordService {
     }
 
     if (isIdSuccess) {
-      console.log('${label} succes. Words: ', this.words);
+      console.log(`${label} success. Words: `, this.words);
       this.repository.save(this.words)
         .then(success => console.log('saved...'))
         .catch(e => console.warn(`${label} error: ${e}`));
