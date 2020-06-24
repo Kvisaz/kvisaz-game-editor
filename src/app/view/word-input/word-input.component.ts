@@ -33,6 +33,13 @@ export class WordInputComponent implements OnInit {
     }
     console.log(`${this.wordOne} : ${this.wordTwo}`);
     this.wordService.addWord(this.wordOne, this.wordTwo);
+
+    this.clear();
+  }
+
+  private clear() {
+    this.wordOne = '';
+    this.wordTwo = '';
   }
 
   private isError(w1: string, w2: string): boolean {
