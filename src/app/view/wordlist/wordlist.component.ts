@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {WordService} from '../../logic/word.service';
-import {IWord} from '../../abstract/AbstractInterfaces';
+import {IWord} from '../../abstract/WordEditorInterfaces';
 
 @Component({
   selector: 'app-wordlist',

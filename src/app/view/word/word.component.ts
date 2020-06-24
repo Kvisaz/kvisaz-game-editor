@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {WordService} from '../../logic/word.service';
 import {StringService} from '../../logic/string.service';
-import {IWord} from '../../abstract/AbstractInterfaces';
+import {IWord} from '../../abstract/WordEditorInterfaces';
 
 @Component({
   selector: 'app-word',
