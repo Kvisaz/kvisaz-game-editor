@@ -1,0 +1,11 @@
+<div class="form-row">
+  <mat-form-field>
+    <mat-label>{{strings.get().inputWordOne}}</mat-label>
+    <input matInput [(ngModel)]="wordOne">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>{{strings.get().inputWordTwo}}</mat-label>
+    <input matInput [(ngModel)]="wordTwo">
+  </mat-form-field>
+  <button mat-button (click)="onClick()">{{strings.get().inputBtAdd}}</button>
+</div>

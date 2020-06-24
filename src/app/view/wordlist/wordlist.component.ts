@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {WordServiceService} from '../../logic/word-service.service';
+import {WordService} from '../../logic/word.service';
 import {IWord} from '../../abstract/AbstractInterfaces';
 
 @Component({
@@ -9,7 +9,7 @@ import {IWord} from '../../abstract/AbstractInterfaces';
 })
 export class WordlistComponent implements OnInit {
 
-  constructor(private wordService: WordServiceService) {
+  constructor(private wordService: WordService) {
   }
 
   ngOnInit(): void {

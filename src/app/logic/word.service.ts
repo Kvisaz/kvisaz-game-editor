@@ -4,7 +4,7 @@ import {IWord} from '../abstract/AbstractInterfaces';
 @Injectable({
   providedIn: 'root'
 })
-export class WordServiceService {
+export class WordService {
   private readonly words: Array<IWord>;
 
   constructor() {
