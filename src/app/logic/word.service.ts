@@ -78,7 +78,7 @@ export class WordService {
   private onLoad(words: Array<IWord>) {
     this.words = words || [];
     this.isWordsReady = true;
-    console.log(`onLoad: ${words}`);
+    console.log(`onLoad: `, words);
   }
 
   private onLoadError(e: any) {
