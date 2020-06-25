@@ -10,6 +10,26 @@
 }
 
 .fields {
-  display: flex;
   align-items: center;
+}
+
+:host {
+  display: flex;
+}
+
+
+@media screen and (max-width: 640px) {
+  .mat-form-field {
+    margin-right: 12px;
+    max-width: 35%;
+  }
+
+  .fields button {
+    margin-right: 12px;
+  }
+
+  .mat-form-field:last-of-type {
+    margin-right: 8px;
+  }
+
 }

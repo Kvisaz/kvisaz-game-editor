@@ -5,6 +5,8 @@ import {IWord} from '../abstract/WordEditorInterfaces';
 import {Repository} from './Repository';
 import {DictionaryUrlParamConverter} from './urlencoder/paramconverters/DictionaryUrlParamConverter';
 import {UrlParams} from './urlencoder/UrlParams';
+import {ConfigService} from '../config/ConfigService';
+import {Config} from '../config/config';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +16,10 @@ export class MainLogicService {
   constructor(
     private wordService: WordService,
     private dataUrlService: DataUrlService,
-    private repository: Repository
+    private repository: Repository,
+    private configService: ConfigService
   ) {
+    this.dataUrlService.setBaseUrl(this.getConfig().defaultGameUrl);
   }
 
   onStart() {
@@ -39,16 +43,27 @@ export class MainLogicService {
   addWord(one: string, two: string) {
     this.wordService.addWord(one, two);
     this.save();
+    this.updateUrl();
   }
 
   saveItem(one: string, two: string, id: number) {
     this.wordService.saveItem(one, two, id);
     this.save();
+    this.updateUrl();
   }
 
   remove(id: number) {
     this.wordService.remove(id);
     this.save();
+    this.updateUrl();
+  }
+
+  getConfig(): Config {
+    return this.configService.get();
+  }
+
+  getDataUrl():string {
+    return this.dataUrlService.getUrl();
   }
 
   /***********************
@@ -67,6 +82,10 @@ export class MainLogicService {
     this.repository.save(this.wordService.getWords())
       .then(success => console.log('saved...'))
       .catch(e => console.warn(`save error: ${e}`));
+  }
+
+  private updateUrl(){
+    this.dataUrlService.encodeDictionary(this.wordService.getWords());
   }
 
   // TODO delete after test
@@ -92,5 +111,6 @@ export class MainLogicService {
 
     console.log('dictionary: ', dictionary);
   }
+
 
 }

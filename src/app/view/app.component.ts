@@ -1,5 +1,4 @@
-import {Component} from '@angular/core';
-import {WordService} from '../logic/word.service';
+import {Component, OnInit} from '@angular/core';
 import {MainLogicService} from '../logic/main-logic.service';
 
 @Component({
@@ -7,14 +6,21 @@ import {MainLogicService} from '../logic/main-logic.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'kvisaz-game-editor';
 
   constructor(private mainLogic: MainLogicService) {
-    mainLogic.onStart();
+  }
+
+  ngOnInit(): void {
+    this.mainLogic.onStart();
   }
 
   isDictionaryReady() {
     return this.mainLogic.isDictionaryLoaded();
+  }
+
+  isCopyReady() {
+    return this.mainLogic.isUrlReady();
   }
 }

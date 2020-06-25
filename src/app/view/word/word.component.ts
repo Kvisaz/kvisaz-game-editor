@@ -1,7 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {WordService} from '../../logic/word.service';
 import {StringService} from '../../logic/string.service';
-import {IWord} from '../../abstract/WordEditorInterfaces';
 import {MainLogicService} from '../../logic/main-logic.service';
 
 @Component({
