@@ -9,6 +9,7 @@
     },
     "array-type": false,
     "arrow-return-shorthand": true,
+    "callable-types": false,
     "curly": true,
     "deprecation": {
       "severity": "warning"
@@ -76,6 +77,7 @@
       true,
       "as-needed"
     ],
+    "prefer-for-of": false,
     "quotemark": [
       true,
       "single"
@@ -94,6 +96,7 @@
         "named": "never"
       }
     },
+    "triple-equals": false,
     "typedef-whitespace": {
       "options": [
         {

@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewContainerRef} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {StringService} from '../../logic/string.service';
 import {FormGroup} from '@angular/forms';
 import {WordService} from '../../logic/word.service';
@@ -28,13 +28,14 @@ export class WordInputComponent implements OnInit {
     const w1 = this.wordOne ? this.wordOne.trim() : '';
     const w2 = this.wordTwo ? this.wordTwo.trim() : '';
 
+    this.clear();
+
     if (this.isError(w1, w2)) {
       return;
     }
-    console.log(`${this.wordOne} : ${this.wordTwo}`);
-    this.wordService.addWord(this.wordOne, this.wordTwo);
+    console.log(`${w1} : ${w2}`);
+    this.wordService.addWord(w1, w2);
 
-    this.clear();
   }
 
   private clear() {

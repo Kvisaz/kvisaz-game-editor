@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {IWord} from '../abstract/WordEditorInterfaces';
 import {Repository} from './Repository';
+import {UrlParams} from './urlencoder/UrlParams';
+import {DictionaryUrlParamConverter} from './urlencoder/paramconverters/DictionaryUrlParamConverter';
 
 type IWordOperation = (words: Array<IWord>, index: number) => void;
 
@@ -10,6 +12,8 @@ type IWordOperation = (words: Array<IWord>, index: number) => void;
 export class WordService {
   private words: Array<IWord>;
   private isWordsReady = false;
+
+  private urlParams = new UrlParams();
 
   constructor(private repository: Repository) {
     setTimeout(() => {
@@ -73,6 +77,28 @@ export class WordService {
     } else {
       console.warn(`no word with id ${id}`);
     }
+
+    // delete after test
+    const dictionaryUrlParamConverter = new DictionaryUrlParamConverter();
+    const encodedUrl = UrlParams.getUrl(
+      'http://kvisaz.com/game.html',
+      {
+        d: dictionaryUrlParamConverter.encode(this.words)
+      });
+    console.log('encodedUrl: ', encodedUrl);
+    const encodedUrl2 = 'http://kvisaz.com/game.html?d=knight@%D1%80%D1%8B%D1%86%D0%B0%D1%80%D1%8C@@mother@%D0%BC%D0%B0%D0%BC%D0%B0@@%D1%81%D0%BE%D0%B1%D0%B0%D0%BA%D0%B0@dog';
+    console.log('encodedUrl2: ', encodedUrl2);
+
+    const urlVars = UrlParams.getVars(encodedUrl2);
+    console.log('urlVars: ', urlVars);
+
+    let dictionary;
+    const dictUrlParam = urlVars.d;
+    if (dictUrlParam != null) {
+      dictionary = dictionaryUrlParamConverter.decode(dictUrlParam);
+    }
+
+    console.log('dictionary: ', dictionary);
   }
 
   private onLoad(words: Array<IWord>) {

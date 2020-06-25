@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WordInputComponent } from './word-input.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+
 
 describe('WordInputComponent', () => {
   let component: WordInputComponent;
@@ -8,7 +11,9 @@ describe('WordInputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WordInputComponent ]
+      declarations: [ WordInputComponent ],
+      imports: [ MatSnackBarModule ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));
