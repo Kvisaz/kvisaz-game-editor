@@ -1,5 +1,6 @@
 export interface IStringSource extends IStringSourceContract {
   copyBt: string;
+  copyMessage: string;
   close: string;
   itemSave: string;
   itemBtRemove: string;
