@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {WordService} from '../logic/word.service';
+import {MainLogicService} from '../logic/main-logic.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,11 @@ import {WordService} from '../logic/word.service';
 export class AppComponent {
   title = 'kvisaz-game-editor';
 
-  constructor(private wordService: WordService) {
+  constructor(private mainLogic: MainLogicService) {
+    mainLogic.onStart();
   }
 
-  isReady() {
-    return this.wordService.isReady();
+  isDictionaryReady() {
+    return this.mainLogic.isDictionaryLoaded();
   }
 }

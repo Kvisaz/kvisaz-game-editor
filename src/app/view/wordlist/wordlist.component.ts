@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {WordService} from '../../logic/word.service';
 import {IWord} from '../../abstract/WordEditorInterfaces';
+import {MainLogicService} from '../../logic/main-logic.service';
 
 @Component({
   selector: 'app-wordlist',
@@ -9,13 +9,13 @@ import {IWord} from '../../abstract/WordEditorInterfaces';
 })
 export class WordlistComponent implements OnInit {
 
-  constructor(private wordService: WordService) {
+  constructor(private mainLogic: MainLogicService) {
   }
 
   ngOnInit(): void {
   }
 
   getWords(): Array<IWord> {
-    return this.wordService.getWords();
+    return this.mainLogic.getWords();
   }
 }

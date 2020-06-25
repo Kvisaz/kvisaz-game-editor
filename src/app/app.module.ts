@@ -15,6 +15,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { CopyComponent } from './view/copy/copy.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     AppComponent,
     WordComponent,
     WordlistComponent,
-    WordInputComponent
+    WordInputComponent,
+    CopyComponent
   ],
   imports: [
     BrowserModule,

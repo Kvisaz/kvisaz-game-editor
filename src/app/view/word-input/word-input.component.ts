@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {StringService} from '../../logic/string.service';
 import {FormGroup} from '@angular/forms';
-import {WordService} from '../../logic/word.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {MainLogicService} from '../../logic/main-logic.service';
 
 @Component({
   selector: 'app-word-input',
@@ -16,7 +16,7 @@ export class WordInputComponent implements OnInit {
 
   constructor(
     public strings: StringService,
-    private wordService: WordService,
+    private mainLogic: MainLogicService,
     private snackBar: MatSnackBar
   ) {
   }
@@ -34,7 +34,7 @@ export class WordInputComponent implements OnInit {
       return;
     }
     console.log(`${w1} : ${w2}`);
-    this.wordService.addWord(w1, w2);
+    this.mainLogic.addWord(w1, w2);
 
   }
 

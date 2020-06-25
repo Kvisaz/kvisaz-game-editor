@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {WordService} from '../../logic/word.service';
 import {StringService} from '../../logic/string.service';
 import {IWord} from '../../abstract/WordEditorInterfaces';
+import {MainLogicService} from '../../logic/main-logic.service';
 
 @Component({
   selector: 'app-word',
@@ -17,7 +18,7 @@ export class WordComponent implements OnInit {
   isChanged = false;
 
   constructor(
-    private wordService: WordService,
+    private mainLogic: MainLogicService,
     public strings: StringService
   ) {
   }
@@ -31,7 +32,7 @@ export class WordComponent implements OnInit {
     }
     this.blocked = true;
     console.log(`remove ${this.id}`);
-    this.wordService.remove(this.id);
+    this.mainLogic.remove(this.id);
   }
 
   onInputChange() {
@@ -39,7 +40,7 @@ export class WordComponent implements OnInit {
   }
 
   saveItem() {
-    this.wordService.saveItem(this.one, this.two, this.id);
+    this.mainLogic.saveItem(this.one, this.two, this.id);
     // this.isChanged = true; // не нужно, так как список обновится
   }
 
