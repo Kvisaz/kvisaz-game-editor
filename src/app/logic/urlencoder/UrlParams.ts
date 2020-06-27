@@ -30,9 +30,10 @@ export class UrlParams {
     Object.keys(params).forEach(key => {
       paramsStr.push(`${key}=${params[key]}`);
     });
-    const search = paramsStr.join('&');
 
-    return baseUrl + '?' + search;
+    const search = paramsStr.join('&');
+    const delim = search.length > 0 ? '?' : '';
+    return baseUrl + delim + search;
   }
 }
 

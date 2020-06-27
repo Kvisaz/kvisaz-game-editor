@@ -1,4 +1,5 @@
 export interface IStringSource extends IStringSourceContract {
+  copyUrlLabel: string;
   copyBt: string;
   copyMessage: string;
   close: string;

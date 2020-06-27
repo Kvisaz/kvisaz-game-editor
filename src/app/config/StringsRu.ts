@@ -1,6 +1,7 @@
 import {IStringSource} from '../logic/string.interfaces';
 
 export const StringsRu: IStringSource = {
+  copyUrlLabel: 'Ссылка на игру',
   copyBt: 'Копировать',
   copyMessage: 'Url скопирован',
   close: 'Закрыть',

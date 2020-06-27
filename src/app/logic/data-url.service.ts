@@ -28,8 +28,12 @@ export class DataUrlService {
     this.addParam('d', this.dictionaryUrlParamConverter.encode(words));
   }
 
-  isReady() {
+  isReady(): boolean {
     return this.url != null && this.url.length > 0;
+  }
+
+  hasParams(): boolean {
+    return Object.keys(this.params).length > 0;
   }
 
   getUrl() {
@@ -37,7 +41,11 @@ export class DataUrlService {
   }
 
   private addParam(name: string, value: string) {
-    this.params[name] = value;
+    if (value == null || value.trim().length === 0) {
+      delete this.params[name];
+    } else {
+      this.params[name] = value;
+    }
     this.url = UrlParams.getUrl(this.baseUrl, this.params);
   }
 }
