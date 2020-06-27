@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {StringService} from '../../logic/string.service';
-import {MainLogicService} from '../../logic/main-logic.service';
+import {StringService} from '../../../logic/string.service';
+import {MainLogicService} from '../../../logic/main-logic.service';
 
 @Component({
   selector: 'app-word',

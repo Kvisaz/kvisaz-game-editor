@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {StringService} from '../../logic/string.service';
+import {StringService} from '../../../logic/string.service';
 import {FormGroup} from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {MainLogicService} from '../../logic/main-logic.service';
+import {MainLogicService} from '../../../logic/main-logic.service';
 
 @Component({
   selector: 'app-word-input',

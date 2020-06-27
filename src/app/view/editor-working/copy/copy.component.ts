@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {StringService} from '../../logic/string.service';
-import {MainLogicService} from '../../logic/main-logic.service';
+import {StringService} from '../../../logic/string.service';
+import {MainLogicService} from '../../../logic/main-logic.service';
 import {Clipboard} from '@angular/cdk/clipboard';
 import {MatSnackBar} from '@angular/material/snack-bar';
 

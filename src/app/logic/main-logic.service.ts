@@ -62,7 +62,7 @@ export class MainLogicService {
     return this.configService.get();
   }
 
-  getDataUrl():string {
+  getDataUrl(): string {
     return this.dataUrlService.getUrl();
   }
 
@@ -71,11 +71,17 @@ export class MainLogicService {
    **********************/
   private loadDictionary() {
     this.repository.load()
-      .then(words => this.wordService.setWords(words || []))
+      .then(words => this.setWords(words))
       .catch(e => {
         console.warn('load error ', e);
-        this.wordService.setWords([]);
+        this.setWords([]);
       });
+  }
+
+  private setWords(words: Array<IWord>) {
+    words = words || [];
+    this.wordService.setWords(words);
+    this.updateUrl();
   }
 
   private save() {
@@ -84,7 +90,7 @@ export class MainLogicService {
       .catch(e => console.warn(`save error: ${e}`));
   }
 
-  private updateUrl(){
+  private updateUrl() {
     this.dataUrlService.encodeDictionary(this.wordService.getWords());
   }
 
