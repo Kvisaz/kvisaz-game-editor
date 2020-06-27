@@ -1,22 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CopyComponent } from './copy.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { EditorLoadingComponent } from './editor-loading.component';
 
-describe('CopyComponent', () => {
-  let component: CopyComponent;
-  let fixture: ComponentFixture<CopyComponent>;
+describe('EditorLoadingComponent', () => {
+  let component: EditorLoadingComponent;
+  let fixture: ComponentFixture<EditorLoadingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CopyComponent ],
-      imports: [ MatSnackBarModule ],
+      declarations: [ EditorLoadingComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CopyComponent);
+    fixture = TestBed.createComponent(EditorLoadingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

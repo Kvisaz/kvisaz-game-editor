@@ -1,12 +1,12 @@
-<div class="mat-app-background basic-container">
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-content>
+    <app-navbar></app-navbar>
+    <!-- Add Content Here -->
 
-  <mat-card class="example-card"><p id="title">{{ title }} app is running!</p></mat-card>
-  <div [ngSwitch]="isDictionaryReady()">
-    <div *ngSwitchCase="false">isLoading...</div>
-    <div *ngSwitchCase="true">
-      <app-copy *ngIf="isCopyReady()"></app-copy>
-      <app-wordlist></app-wordlist>
-      <app-word-input></app-word-input>
+    <div [ngSwitch]="isDictionaryReady()">
+      <app-editor-loading *ngSwitchCase="false"></app-editor-loading>
+      <app-editor-working *ngSwitchCase="true"></app-editor-working>
     </div>
-  </div>
-</div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

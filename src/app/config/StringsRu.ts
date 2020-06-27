@@ -14,4 +14,5 @@ export const StringsRu: IStringSource = {
   inputErrorEqual: 'Слова должны быть разными',
   inputVoidOne: 'Первое слово не должно быть пустым',
   inputVoidTwo: 'Второе слово не должно быть пустым',
+  navBarTitle: 'Редактор словаря Kvisaz.com',
 };

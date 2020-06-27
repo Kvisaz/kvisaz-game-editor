@@ -15,7 +15,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { CopyComponent } from './view/copy/copy.component';
+import {CopyComponent} from './view/copy/copy.component';
+import {LayoutModule} from '@angular/cdk/layout';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {NavbarComponent} from './view/navbar/navbar.component';
+import { EditorLoadingComponent } from './view/editor-loading/editor-loading.component';
+import { EditorWorkingComponent } from './view/editor-working/editor-working.component';
 
 
 @NgModule({
@@ -24,7 +30,10 @@ import { CopyComponent } from './view/copy/copy.component';
     WordComponent,
     WordlistComponent,
     WordInputComponent,
-    CopyComponent
+    CopyComponent,
+    NavbarComponent,
+    EditorLoadingComponent,
+    EditorWorkingComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +47,10 @@ import { CopyComponent } from './view/copy/copy.component';
     ReactiveFormsModule,
     FormsModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

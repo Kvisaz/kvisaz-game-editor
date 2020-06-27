@@ -12,6 +12,7 @@ export interface IStringSource extends IStringSourceContract {
   inputErrorEqual: string;
   inputVoidOne: string;
   inputVoidTwo: string;
+  navBarTitle: string;
 }
 
 interface IStringSourceContract {
